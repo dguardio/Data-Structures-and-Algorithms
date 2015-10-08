@@ -81,11 +81,13 @@ public class LinkedList<T> implements Iterable<T> {
         }
     }
 
+    @Override
     public Iterator<T> iterator() { return new LinkedListIterator(); }
 
     private class LinkedListIterator implements Iterator<T> {
         private Node current = first;
 
+        @Override
         public T next() {
             if (!hasNext()) { throw new NoSuchElementException(); }
             T item = current.data;
@@ -93,8 +95,10 @@ public class LinkedList<T> implements Iterable<T> {
             return item;
         }
 
+        @Override
         public boolean hasNext() { return current != null; }
 
+        @Override
         public void remove() { throw new UnsupportedOperationException(); }
     }
 
