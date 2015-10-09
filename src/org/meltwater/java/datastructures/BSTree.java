@@ -5,6 +5,7 @@
  */
 package org.meltwater.java.datastructures;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -12,6 +13,7 @@ import java.util.ArrayList;
  * @param <E>
  */
 public class BSTree <E extends Comparable> {
+    
     ArrayList<Node> store = new ArrayList<>();
     
     class Node{
@@ -44,8 +46,40 @@ public class BSTree <E extends Comparable> {
             }
         }
     }
-    public Boolean contains(E data){
-
+    
+    /*
+    public void contains(E data){
+        for(int i = 0; i < store.size(); i++){
+            if(data == store.get(i)){
+                return true;
+            } else{
+                return false;
+            }
+        }
+    Before prompt from NetBeans to restructure to below
+    }
+    */
+    public boolean contains(E data){
+        for (Node store1 : store) {
+            if(data == store1)
+            {
+                int n = store.indexOf(store1);
+                return true;
+            }            
+         }
+        return false;
+    }
+   
+    
+       
+    public void remove (E data){
+      if(contains(data) == true){
+          
+      }  
     }
 }
+    
+    
+       
+
 
